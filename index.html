@@ -205,6 +205,66 @@ footer span {
   section {
     padding: 55px 6%;
   }
+} 
+  /* RETRO GLAM 80s ANIMATION */
+@keyframes discoGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+@keyframes titleEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  animation: titleEntrance 1.2s ease-out both;
+}
+
+.hero .disco {
+  animation: discoGlow 3s ease-in-out infinite;
+}
+
+.hero::before,
+.hero::after {
+  animation: discoGlow 5s ease-in-out infinite;
+}
+
+header .logo {
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+header .logo:hover {
+  color: #ffd166;
+}
+
+nav a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd166;
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 </style>
 </head>
