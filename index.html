@@ -1,73 +1,311 @@
-
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Farewell | A Night to Remember</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Majlis Apresiasi | Langkah Kecil, Kenangan Terindah</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fffaf3;
+  color: #39294c;
+  line-height: 1.7;
+}
+
+header {
+  background: #43245f;
+  color: white;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 9px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #ffd36e;
+}
+
+.hero {
+  min-height: 540px;
+  padding: 90px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at 10% 20%, #f8c6dc 0 7%, transparent 8%),
+    radial-gradient(circle at 90% 80%, #b8e5dc 0 8%, transparent 9%),
+    linear-gradient(135deg, #f9e8ef, #f5e7c8, #e8d8f4);
+}
+
+.hero .eyebrow {
+  letter-spacing: 4px;
+  color: #70418c;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 68px);
+  color: #43245f;
+  line-height: 1.15;
+  margin: 20px 0;
+}
+
+.hero h2 {
+  color: #a34d91;
+  font-size: clamp(21px, 4vw, 32px);
+  font-style: italic;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+.disco {
+  font-size: 65px;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  background: #43245f;
+  color: white;
+  padding: 13px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #a34d91;
+}
+
+section {
+  padding: 75px 8%;
+  text-align: center;
+}
+
+.section-title {
+  color: #43245f;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #a34d91;
+  margin-bottom: 30px;
+}
+
+.about {
+  background: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+  margin-top: 35px;
+}
+
+.card {
+  background: #fff5f8;
+  padding: 28px 20px;
+  border-radius: 18px;
+  border: 1px solid #f0d8e6;
+}
+
+.card .emoji {
+  font-size: 42px;
+}
+
+.card h3 {
+  color: #70418c;
+  margin: 12px 0;
+}
+
+.activities {
+  background: #f1e8f7;
+}
+
+.gallery {
+  background: white;
+}
+
+.photo-box {
+  min-height: 160px;
+  border: 2px dashed #c9a9d8;
+  background: #fbf5fc;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #70418c;
+}
+
+.memory {
+  background: #fff1e2;
+}
+
+.memory p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 19px;
+  font-style: italic;
+}
+
+footer {
+  background: #43245f;
+  color: white;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+footer span {
+  color: #ffd36e;
+}
+
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <header class="hero">
-    <nav>
-      <div class="logo">★ DIGITAL FAREWELL ★</div>
-      <span>EST. 2026</span>
-    </nav>
+<header>
+  <div class="logo">✦ DIGITAL FAREWELL ✦</div>
+  <nav>
+    <a href="#utama">Utama</a>
+    <a href="#majlis">Tentang</a>
+    <a href="#aktiviti">Aktiviti</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#memori">Memori</a>
+  </nav>
+</header>
 
-    <div class="disco">🪩</div>
+<main>
 
-    <p class="eyebrow">ONE JOURNEY · COUNTLESS MEMORIES</p>
+<section class="hero" id="utama">
+  <div class="disco">🪩</div>
+  <div class="eyebrow">A SPECIAL CELEBRATION</div>
+  <h1>MAJLIS APRESIASI</h1>
+  <h2>Langkah Kecil, Kenangan Terindah</h2>
+  <p>
+    Mengabadikan setiap senyuman, menghargai setiap usaha
+    dan meraikan kenangan yang tercipta bersama.
+  </p>
+  <a href="#majlis" class="button">Jelajahi Kenangan ✨</a>
+</section>
 
-    <h1>
-      THE RETRO
-      <span>FAREWELL</span>
-    </h1>
+<section class="about" id="majlis">
+  <h2 class="section-title">Sebuah Kisah, Sejuta Kenangan</h2>
+  <p class="subtitle">Every Little Step Matters</p>
+  <p>
+    Setiap langkah kecil membawa makna yang besar.
+    Di sebalik setiap perjalanan, tersimpan kisah,
+    kasih sayang, pengorbanan dan kenangan yang tidak ternilai.
+  </p>
+  <p style="margin-top:15px;">
+    Majlis Apresiasi ini menjadi ruang untuk kita
+    mengenang perjalanan, meraikan kebersamaan
+    dan menghargai insan yang telah mencipta kenangan bersama.
+  </p>
+</section>
 
-    <h2>A Night to Remember</h2>
+<section class="activities" id="aktiviti">
+  <h2 class="section-title">Detik Kegembiraan</h2>
+  <p class="subtitle">A Celebration Full of Joy</p>
 
-    <p class="intro">
-      Setiap pertemuan mempunyai cerita,
-      setiap perpisahan menyimpan kenangan.
-    </p>
-
-    <a href="#memories" class="button">
-      LET'S REWIND THE MEMORIES ★
-    </a>
-  </header>
-
-  <section id="memories" class="memories">
-    <p class="eyebrow">OUR BEAUTIFUL JOURNEY</p>
-    <h2>Memories Never Fade</h2>
-    <p>
-      Bersama kita mencipta kenangan.
-      Selamanya terpahat dalam ingatan.
-    </p>
-
-    <div class="memory-card">
-      <div class="cassette">📼</div>
-      <h3>Our Story</h3>
-      <p>Terima kasih untuk setiap detik yang indah.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">🎤</div>
+      <h3>Ucapan Apresiasi</h3>
+      <p>Penghargaan buat semua insan yang istimewa.</p>
     </div>
 
-    <div class="memory-card">
-      <div class="cassette">💿</div>
-      <h3>Our Memories</h3>
-      <p>Kenangan yang akan sentiasa hidup di hati.</p>
+    <div class="card">
+      <div class="emoji">🎶</div>
+      <h3>Hiburan & Persembahan</h3>
+      <p>Meraikan suasana dengan keceriaan dan muzik.</p>
     </div>
 
-    <div class="memory-card">
-      <div class="cassette">💌</div>
-      <h3>Our Messages</h3>
-      <p>Setiap ucapan menjadi kenangan berharga.</p>
+    <div class="card">
+      <div class="emoji">📸</div>
+      <h3>Detik Kenangan</h3>
+      <p>Menyimpan memori indah untuk dikenang.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <h2>FOREVER IN OUR HEARTS</h2>
-    <p>THE END OF A CHAPTER, NOT THE END OF OUR STORY ♥</p>
-    <p>© 2026 DIGITAL FAREWELL</p>
-  </footer>
+<section class="gallery" id="galeri">
+  <h2 class="section-title">Galeri Kenangan</h2>
+  <p class="subtitle">Moments We Treasure Forever</p>
+
+  <div class="cards">
+    <div class="photo-box">📷 Ruang Gambar 1</div>
+    <div class="photo-box">📷 Ruang Gambar 2</div>
+    <div class="photo-box">📷 Ruang Gambar 3</div>
+  </div>
+</section>
+
+<section class="memory" id="memori">
+  <h2 class="section-title">Langkah Kecil, Kenangan Terindah</h2>
+  <p>
+    "Ada kenangan yang mungkin berlalu,
+    tetapi setiap senyuman dan kebaikan
+    akan terus hidup di dalam ingatan."
+  </p>
+  <div style="font-size:35px; margin-top:25px;">
+    💜 ✨ 🪩 ✨ 💜
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><span>✦ MAJLIS APRESIASI ✦</span></p>
+  <p>Langkah Kecil, Kenangan Terindah</p>
+  <p>© 2026 Digital Farewell</p>
+</footer>
 
 </body>
 </html>
