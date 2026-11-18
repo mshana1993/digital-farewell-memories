@@ -266,6 +266,57 @@ nav a:hover {
     transition: none !important;
   }
 }
+  /* ANIMASI TAJUK RETRO */
+.hero {
+    text-align: center;
+    align-items: center;
+}
+
+.hero h1 {
+    animation: tajukMasuk 1.5s ease-out both,
+               cahayaTajuk 3s ease-in-out 1.5s infinite;
+    letter-spacing: 3px;
+}
+
+.hero h2 {
+    animation: tajukMasuk 1.5s ease-out 0.5s both;
+}
+
+.hero .disco {
+    animation: discoBerputar 5s linear infinite,
+               discoTerapung 2s ease-in-out infinite alternate;
+}
+
+@keyframes tajukMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes cahayaTajuk {
+    0%, 100% {
+        text-shadow: 0 0 5px #d9b8ff;
+    }
+    50% {
+        text-shadow: 0 0 15px #d9b8ff,
+                     0 0 25px #ffd166;
+    }
+}
+
+@keyframes discoBerputar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes discoTerapung {
+    from { margin-top: 0; }
+    to { margin-top: -12px; }
+}
 </style>
 </head>
 
