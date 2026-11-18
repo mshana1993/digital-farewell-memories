@@ -446,6 +446,41 @@ nav a:hover {
     to { opacity: 1; transform: scale(1.4); }
 }
 
+  
+/* GLOBE DISCO PELANGI BERPUTAR */
+.hero .disco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+}
+
+.hero .disco img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    animation: discoSpin 8s linear infinite,
+               discoFlash 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes discoSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes discoFlash {
+    from {
+        filter: brightness(0.9) drop-shadow(0 0 8px #ff00cc);
+    }
+    to {
+        filter: brightness(1.5) drop-shadow(0 0 25px #00ffff)
+                drop-shadow(0 0 35px #ff00cc);
+    }
+}
+
 </style>
 </head>
 
@@ -465,7 +500,9 @@ nav a:hover {
 <main>
 
 <section class="hero" id="utama">
-  <div class="disco"></div>
+ <div class="disco">
+  <img src="disco-ball.png.png" alt="Colorful Disco Ball">
+</div>
   <div class="eyebrow">A SPECIAL CELEBRATION</div>
   <h1>MAJLIS APRESIASI</h1>
   <h2>Langkah Kecil, Kenangan Terindah</h2>
