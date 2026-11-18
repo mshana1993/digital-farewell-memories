@@ -283,8 +283,8 @@ nav a:hover {
 }
 
 .hero .disco {
-    animation: discoBerputar 5s linear infinite,
-               discoTerapung 2s ease-in-out infinite alternate;
+    animation: rainbowDisco 5s linear infinite,
+           discoShine 1s ease-in-out infinite;
 }
 
 @keyframes tajukMasuk {
@@ -375,6 +375,77 @@ nav a:hover {
     }
 }
 
+/* BOLA DISKO PELANGI 80-AN */
+.hero .disco {
+    width: 105px;
+    height: 105px;
+    margin: 20px auto;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 9px,
+            rgba(255,255,255,0.8) 10px 11px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 9px,
+            rgba(255,255,255,0.8) 10px 11px
+        ),
+        conic-gradient(
+            #ff0080, #ffdd00, #00e5ff,
+            #7b2cff, #ff0080
+        );
+    box-shadow:
+        0 0 12px #ff00cc,
+        0 0 25px #00eaff,
+        0 0 40px #ffcc00;
+    animation: rainbowDisco 5s linear infinite;
+}
+
+.hero .disco::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.9),
+        transparent 35%,
+        rgba(255,255,255,0.5) 55%,
+        transparent 75%
+    );
+    animation: discoShine 1s ease-in-out infinite alternate;
+}
+
+.hero .disco::after {
+    content: "✦";
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    color: #fff000;
+    font-size: 32px;
+    text-shadow: 0 0 12px #ff00cc;
+    animation: discoSparkle 0.7s infinite alternate;
+}
+
+@keyframes rainbowDisco {
+    from { transform: rotate(0deg); filter: hue-rotate(0deg); }
+    to { transform: rotate(360deg); filter: hue-rotate(360deg); }
+}
+
+@keyframes discoShine {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+@keyframes discoSparkle {
+    from { opacity: 0.2; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1.4); }
+}
+
 </style>
 </head>
 
@@ -394,7 +465,7 @@ nav a:hover {
 <main>
 
 <section class="hero" id="utama">
-  <div class="disco">🪩</div>
+  <div class="disco"></div>
   <div class="eyebrow">A SPECIAL CELEBRATION</div>
   <h1>MAJLIS APRESIASI</h1>
   <h2>Langkah Kecil, Kenangan Terindah</h2>
