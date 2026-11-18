@@ -317,6 +317,64 @@ nav a:hover {
     from { margin-top: 0; }
     to { margin-top: -12px; }
 }
+  
+/* DISCO BALL - RETRO PARTY EFFECT */
+.hero .disco {
+    display: inline-block;
+    position: relative;
+    font-size: 90px;
+    filter: hue-rotate(0deg) saturate(2)
+            drop-shadow(0 0 10px #ff4fd8)
+            drop-shadow(0 0 20px #45eaff);
+    animation: discoPesta 4s linear infinite;
+}
+
+.hero .disco::before,
+.hero .disco::after {
+    content: "✦";
+    position: absolute;
+    font-size: 28px;
+    animation: bintangKelip 1s ease-in-out infinite alternate;
+}
+
+.hero .disco::before {
+    color: #ff42b3;
+    top: 0;
+    left: -35px;
+}
+
+.hero .disco::after {
+    content: "✧";
+    color: #00d9ff;
+    right: -35px;
+    bottom: 0;
+    animation-delay: 0.5s;
+}
+
+@keyframes discoPesta {
+    0% {
+        transform: rotate(0deg);
+        filter: hue-rotate(0deg) saturate(2)
+                drop-shadow(0 0 10px #ff4fd8);
+    }
+    100% {
+        transform: rotate(360deg);
+        filter: hue-rotate(360deg) saturate(2)
+                drop-shadow(0 0 20px #45eaff);
+    }
+}
+
+@keyframes bintangKelip {
+    from {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
 </style>
 </head>
 
