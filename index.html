@@ -636,7 +636,36 @@ section h2 {
     0%, 100% { opacity: 0.5; transform: scale(0.8); }
     50% { opacity: 1; transform: scale(1.3); }
 }  
-</style>
+  /* ===== RETRO MEMORIES CANDY GLAM ===== */
+
+.memories .section-heading h2 {
+    background: linear-gradient(
+        90deg,
+        #FF8FBD,
+        #FFD166,
+        #00D4C7,
+        #FF8FBD
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow:
+        3px 3px 0 #8B2EFF,
+        0 0 18px rgba(255,143,189,0.45);
+    animation: retroTitleGlow 5s ease-in-out infinite;
+}
+
+@keyframes retroTitleGlow {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+ </style>
   
   
 </head>
