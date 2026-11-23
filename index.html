@@ -511,6 +511,55 @@ footer p {
 .note-box p {
     color: #210A38 !important;
 }
+  /* ===== CANDY GROOVY RETRO GLOW ===== */
+
+body {
+    background:
+        radial-gradient(circle at 10% 15%, rgba(255,143,189,0.35), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(255,209,102,0.28), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(0,212,199,0.20), transparent 35%),
+        linear-gradient(135deg, #32104B, #481768, #26103F) !important;
+}
+
+/* Retro sparkle glow */
+.decor {
+    filter: drop-shadow(0 0 12px rgba(255,209,102,0.45));
+}
+
+/* Funky hero title */
+.hero h1 {
+    text-shadow:
+        4px 4px 0 #FF8FBD,
+        8px 8px 0 #FFD166 !important;
+}
+
+/* Groovy playful movement */
+.decor {
+    animation: groovyFloat 4s ease-in-out infinite;
+}
+
+@keyframes groovyFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+/* Retro glow for section titles */
+section h2 {
+    text-shadow: 3px 3px 0 rgba(255,143,189,0.45);
+}
+
+/* Smooth visual effects */
+.memory-card {
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px) rotate(-2deg);
+}
 </style>
   
 </head>
