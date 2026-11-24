@@ -169,7 +169,32 @@ footer {
             <h3>Persahabatan</h3>
             <p>Ikatan persahabatan yang kekal selamanya.</p>
         </div>
+    </div> 
+    <!-- RETRO CAMERA -->
+<div class="camera-area">
+    <h2>📸 Retro Memory Camera</h2>
+    <p>Abadikan kenangan indah kita bersama!</p>
+
+    <div class="camera-options">
+        <button onclick="startCamera('normal')">
+            📷 Kamera Biasa
+        </button>
+
+        <button onclick="startCamera('filter')">
+            ✨ Kamera Retro Filter
+        </button>
     </div>
+
+    <div class="camera-preview">
+        <video id="cameraVideo" autoplay playsinline></video>
+    </div>
+
+    <button id="captureBtn" onclick="capturePhoto()">
+        💖 Ambil Gambar
+    </button>
+
+    <canvas id="photoCanvas"></canvas>
+</div>
 </section>
 
 <section id="video">
@@ -204,6 +229,62 @@ footer {
     <p>Digital Farewell Memory Book</p>
     <p>Created with Love ❤️</p>
 </footer>
+<script>
+let cameraStream = null;
+let cameraMode = "normal";
 
+async function startCamera(mode) {
+    cameraMode = mode;
+
+    const video = document.getElementById("cameraVideo");
+
+    try {
+        if (cameraStream) {
+            cameraStream.getTracks().forEach(track => track.stop());
+        }
+
+        cameraStream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: "user" },
+            audio: false
+        });
+
+        video.srcObject = cameraStream;
+
+        if (mode === "filter") {
+            video.style.filter = "sepia(0.5) saturate(1.5) contrast(1.1)";
+        } else {
+            video.style.filter = "none";
+        }
+
+    } catch (error) {
+        alert("Kamera tidak dapat dibuka. Sila benarkan akses kamera pada browser.");
+        console.error(error);
+    }
+}
+
+function capturePhoto() {
+    const video = document.getElementById("cameraVideo");
+    const canvas = document.getElementById("photoCanvas");
+    const context = canvas.getContext("2d");
+
+    if (!video.videoWidth) {
+        alert("Sila buka kamera dahulu.");
+        return;
+    }
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    context.filter = cameraMode === "filter"
+        ? "sepia(0.5) saturate(1.5) contrast(1.1)"
+        : "none";
+
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    canvas.style.display = "block";
+
+    alert("Gambar berjaya diambil! 💖");
+}
+</script>
 </body>
 </html>
