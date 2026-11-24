@@ -256,7 +256,7 @@ async function startCamera(mode) {
         });
 
         video.srcObject = cameraStream;
-
+await setupFaceMesh();
         const filters = {
     normal: "none",
 
