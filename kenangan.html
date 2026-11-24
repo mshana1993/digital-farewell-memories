@@ -175,15 +175,15 @@ footer {
     <h2>📸 Retro Memory Camera</h2>
     <p>Abadikan kenangan indah kita bersama!</p>
 
-    <div class="camera-options">
-        <button onclick="startCamera('normal')">
-            📷 Kamera Biasa
-        </button>
-
-        <button onclick="startCamera('filter')">
-            ✨ Kamera Retro Filter
-        </button>
-    </div>
+   <div class="camera-options">
+    <button onclick="startCamera('normal')">📷 Normal</button>
+    <button onclick="startCamera('vintage')">🎞️ Vintage 80s</button>
+    <button onclick="startCamera('pink')">💗 Pink Glow</button>
+    <button onclick="startCamera('dreamy')">✨ Dreamy</button>
+    <button onclick="startCamera('bw')">🖤 Black & White</button>
+    <button onclick="startCamera('golden')">🌅 Golden Memories</button>
+    <button onclick="startCamera('disco')">🪩 Disco Glam</button>
+</div>
 
     <div class="camera-preview">
         <video id="cameraVideo" autoplay playsinline></video>
@@ -250,11 +250,17 @@ async function startCamera(mode) {
 
         video.srcObject = cameraStream;
 
-        if (mode === "filter") {
-            video.style.filter = "sepia(0.5) saturate(1.5) contrast(1.1)";
-        } else {
-            video.style.filter = "none";
-        }
+        const filters = {
+    normal: "none",
+    vintage: "sepia(0.5) saturate(1.5) contrast(1.1)",
+    pink: "hue-rotate(-15deg) saturate(1.6) brightness(1.1)",
+    dreamy: "brightness(1.15) saturate(1.2)",
+    bw: "grayscale(1)",
+    golden: "sepia(0.35) saturate(1.4) brightness(1.1)",
+    disco: "contrast(1.2) saturate(1.8) hue-rotate(25deg)"
+};
+
+video.style.filter = filters[mode] || "none";
 
     } catch (error) {
         alert("Kamera tidak dapat dibuka. Sila benarkan akses kamera pada browser.");
@@ -275,9 +281,17 @@ function capturePhoto() {
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
-    context.filter = cameraMode === "filter"
-        ? "sepia(0.5) saturate(1.5) contrast(1.1)"
-        : "none";
+    const filters = {
+    normal: "none",
+    vintage: "sepia(0.5) saturate(1.5) contrast(1.1)",
+    pink: "hue-rotate(-15deg) saturate(1.6) brightness(1.1)",
+    dreamy: "brightness(1.15) saturate(1.2)",
+    bw: "grayscale(1)",
+    golden: "sepia(0.35) saturate(1.4) brightness(1.1)",
+    disco: "contrast(1.2) saturate(1.8) hue-rotate(25deg)"
+};
+
+context.filter = filters[cameraMode] || "none";
 
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
