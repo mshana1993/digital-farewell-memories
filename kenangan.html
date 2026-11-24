@@ -119,7 +119,7 @@ footer {
     }
 }/* PINK PRINCESS BEAUTY CAMERA */
 #beautyCanvas {
-    display: none;
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 18px;
@@ -310,6 +310,23 @@ context.filter = filters[cameraMode] || "none";
     canvas.style.display = "block";
 
     alert("Gambar berjaya diambil! 💖");
+}
+    async function processBeautyCamera() {
+    const video = document.getElementById("cameraVideo");
+    const canvas = document.getElementById("beautyCanvas");
+    const context = canvas.getContext("2d");
+
+    if (!faceMesh || !video.videoWidth) return;
+
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+
+    await faceMesh.send({ image: video });
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.filter = "brightness(1.08) contrast(1.03) saturate(1.08)";
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    context.filter = "none";
 }
 </script>
 </body>
