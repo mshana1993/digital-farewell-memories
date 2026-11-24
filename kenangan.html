@@ -117,6 +117,12 @@ footer {
         display: inline-block;
         margin: 5px;
     }
+}/* PINK PRINCESS BEAUTY CAMERA */
+#beautyCanvas {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
 }
 </style>
 </head>
@@ -187,6 +193,7 @@ footer {
 
     <div class="camera-preview">
         <video id="cameraVideo" autoplay playsinline></video>
+        <canvas id="beautyCanvas"></canvas>
     </div>
 
     <button id="captureBtn" onclick="capturePhoto()">
