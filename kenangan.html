@@ -327,7 +327,8 @@ context.filter = filters[cameraMode] || "none";
     context.filter = "brightness(1.08) contrast(1.03) saturate(1.08)";
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
     context.filter = "none";
-}
+requestAnimationFrame(processBeautyCamera);
+    }
 </script>
 </body>
 </html>
