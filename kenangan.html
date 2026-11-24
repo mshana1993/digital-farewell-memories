@@ -206,10 +206,42 @@ footer {
 
 <section id="video">
     <h2>🎬 A Voice From The Heart</h2>
-    <div class="card">
-        <p>Ruang khas untuk video kenangan dan ucapan perpisahan.</p>
-        <p>Coming Soon ❤️</p>
-    </div>
+   
+<div class="card">
+    <h3>💗 Share Your Memories</h3>
+    <p>Kongsikan kenangan indah bersama warga TSP Taman Maju.</p>
+
+    <form id="videoUploadForm">
+        <label for="guestName">Nama Pengirim</label>
+        <input
+            type="text"
+            id="guestName"
+            placeholder="Masukkan nama anda"
+            required
+        >
+
+        <label for="guestMessage">Ucapan Kenangan</label>
+        <textarea
+            id="guestMessage"
+            placeholder="Tuliskan ucapan istimewa anda..."
+            rows="4"
+            required
+        ></textarea>
+
+        <label for="guestVideo">Pilih Video</label>
+        <input
+            type="file"
+            id="guestVideo"
+            accept="video/*"
+            required
+        >
+
+        <button type="button" disabled>
+            💌 Hantar Kenangan
+        </button>
+    </form>
+</div>
+
 </section>
 
 <section id="ucapan">
