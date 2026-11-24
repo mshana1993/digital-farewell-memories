@@ -257,6 +257,7 @@ async function startCamera(mode) {
 
         video.srcObject = cameraStream;
 await setupFaceMesh();
+        processBeautyCamera();
         const filters = {
     normal: "none",
 
